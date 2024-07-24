@@ -1,0 +1,45 @@
+{% load static %}
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewpoint" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    </head>
+
+
+
+    {%include 'base.html'%}
+
+        <h2  class="text-center" style="margin-top: 20px;">Minhas tarefas</h2>
+
+        <hr>
+
+        {% for tsk in task %}
+
+        <div class="container bg-white bg-opacity-25 shadow-md p-4 form-layout text-center" style="margin-top: 20px;">
+
+            <b style="font-size: 30px;"> {{tsk.title}} </b>
+
+            <br><br>
+
+            {{tsk.content}}
+
+            <br><br>
+
+            <a href="{% url 'delete-task' tsk.id %}"> Deletar tarefa </a>
+
+        </div>
+        
+        {% endfor %}
+
+    </div>
+
+</html>

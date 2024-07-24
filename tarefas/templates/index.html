@@ -1,0 +1,58 @@
+{% load static %}
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewpoint" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    </head>
+
+    {% include 'base.html'%}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white bg-opacity-50">
+  <a class="navbar-brand text-white" style="margin-left: 20px;" href=" "><b>LISTA DE TAREFAS</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'register' %}">Cadastro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'my-login' %}">Login</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>
+
+<div class="container bg-white bg-opacity-25 shadow-md p-4 form-layout text-center" style="margin-top: 150px;">
+  <a style="font-size: 30px; text-decoration: none;" href="{% url 'register' %}"><b> CRIE SUA LISTA DE TAREFAS!</b></a>
+</div>
+
+    <script src="{%static 'js/app.js' %}"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

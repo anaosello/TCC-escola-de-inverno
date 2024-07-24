@@ -1,0 +1,43 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewpoint" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    </head>
+
+
+    {% include 'base.html'%}
+
+    <br>
+    
+    <div class="container bg-white bg-opacity-25 shadow-md p-4 text-center form-layout">
+
+        <h2>Página de login</h2>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+            <br>
+
+            <input type="submit" class="btn btn-primary navbar-btn" style="display: block; margin: 0 auto;" value="Login"/>
+
+        </form>
+    
+    </div>
+
+</html>
