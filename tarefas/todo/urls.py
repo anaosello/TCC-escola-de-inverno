@@ -5,25 +5,25 @@ urlpatterns = [
 
     path('',views.home, name="home"),
 
-    #Register a user#
+    #Registrar usuário
     path('register',views.register, name="register"),
 
-    #Login a user#
+    #Login usuário
     path('my-login',views.my_login, name = "my-login"),
 
-    #Dashboard page#
+    #Dashboard
     path('dashboard',views.dashboard, name = "dashboard"),
 
-    #Create a Task
+    #Criar Tarefa
     path('create-task', views.createTask, name="create-task"),
 
-    #View a Task
+    #Ver Tarefa
     path('view-task', views.viewTask, name="view-task"),
 
-    #Delete a Task
+    #Deletar Tarefa
     path('delete-task/<str:pk>/', views.deleteTask, name="delete-task"),
 
-    #Logout a user#
+    #Logout usuário
     path('user-logout',views.user_logout, name = "user-logout"),
 ]
 

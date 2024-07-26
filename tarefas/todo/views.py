@@ -15,7 +15,7 @@ from . models import Task
 def home(request):
     return render(request, 'index.html')
 
-#registering
+#Registro de usuário
 def register(request):
 
     form = CreateUserForm()
@@ -34,7 +34,7 @@ def register(request):
     return render(request, 'register.html', context=context)
 
 
-#login a user
+#Login o usuário
 def my_login(request):
     form = LoginForm
 
@@ -58,12 +58,12 @@ def my_login(request):
     return render(request, 'my-login.html',context=context)
 
 
-#dashboard page
+#Dashboard
 @login_required(login_url='my-login')
 def dashboard(request):
     return render(request, 'profile/dashboard.html')
 
-#create a task
+#Criar tarefa
 @login_required(login_url='my-login')
 def createTask(request):
 
@@ -88,7 +88,7 @@ def createTask(request):
     return render(request, "profile/create-task.html", context=context)
 
 
-#view a task
+#Ver tarefas
 @login_required(login_url='my-login')
 def viewTask(request):
 
@@ -100,7 +100,7 @@ def viewTask(request):
 
     return render(request, 'profile/view-task.html', context=context)
     
-#delete a task
+#Deletar tarefa
 def deleteTask(request, pk):
 
     task = Task.objects.get(id=pk)
@@ -113,7 +113,7 @@ def deleteTask(request, pk):
     
     return render(request,'profile/delete-task.html')
 
-#logout a user
+#Logout usuário
 def user_logout(request):
     auth.logout(request)
     return redirect("home")

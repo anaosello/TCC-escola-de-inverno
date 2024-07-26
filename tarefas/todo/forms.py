@@ -11,9 +11,7 @@ from django import forms
 
 from . models import Task
 
-
-
-#Register a user
+#Registrar usuário
 
 class CreateUserForm(UserCreationForm):
 
@@ -22,7 +20,7 @@ class CreateUserForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-#Login a user
+#Login usuário
 
 class LoginForm(AuthenticationForm):
 
@@ -30,7 +28,7 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(widget=PasswordInput())
 
 
-#Create a task
+#Criar usuário
 
 class CreateTaskForm(forms.ModelForm):
 
